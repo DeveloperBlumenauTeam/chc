@@ -3,7 +3,7 @@ Controle de Hardware
 
 # comandos
 
-- gitardir 
+- girardir 
 - giraesq
 - sube
 - desce
