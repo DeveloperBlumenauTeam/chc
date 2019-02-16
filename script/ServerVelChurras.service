@@ -1,0 +1,19 @@
+# Copiar este arquivo para para: /etc/systemd/system
+#
+# Registrar o servico: systemctl enable ServerVelChurras.service
+# Ativar o servico: systemctl start ServerVelChurras
+# Ver se esta no ar: systemctl status ServerVelChurras
+#
+#
+# Parar o servico: systemctl stop ServerVelChurras
+# Remover o registro: systemctl disable ServerVelChurras.service
+
+[Unit]
+Description = making network connection up
+After = network.target
+
+[Service]
+ExecStart = /home/locutus/Projetos/chc/src/ServerVel.py
+
+[Install]
+WantedBy = multi-user.target
