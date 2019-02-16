@@ -1,4 +1,3 @@
-# Como Fase:
 # Copiar este arquivo para para: /etc/systemd/system
 #
 # Registrar o servico: systemctl enable ServerVelChurras.service
