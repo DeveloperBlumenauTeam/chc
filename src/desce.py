@@ -21,6 +21,8 @@ if __name__ == '__main__':
     gpio.setmode(gpio.BOARD)
     #pino 36 configurado como saída
     gpio.setup(36, gpio.OUT)
+    #pino 26 configurado com entrada - Fim de Curso Desce
+    gpio.setup(26, gpio.IN)
     #ativa o rele DESCE
     gpio.output(36, gpio.HIGH)
     #agurada 0,5 segundos - deve ser ajustado
@@ -29,3 +31,9 @@ if __name__ == '__main__':
     gpio.output(36, gpio.LOW)
     #desfaz os ajustes do GPIO - não sei porque
     gpio.cleanup()
+    #testa se o fim de curso foi acionado
+    if (gpio.input(26)==0):
+        #caso tenha acionado o Fim de Curso imprime FC
+        print("FC")
+    else():
+        print("NFC")
