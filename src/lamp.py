@@ -20,6 +20,8 @@ if __name__ == '__main__':
     #configura como BOARD, identificação física dos pinos
     gpio.setmode(gpio.BOARD)
     #pino 40 configurado como saída para a lâmpada
+    gpio.setup(40,gpio.OUT)
+    #reprograma com entrada para poder ler o estado do pino
     lamp = gpio.input(40)
     if lamp:
         #se lamp = 1 desliga
