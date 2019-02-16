@@ -12,8 +12,9 @@ Update on 20190216
   
 import RPi.GPIO as gpio
 import time
-
 import argparse
+
+import Pipe
 
 def velocidade(velo):
     '''[Ajusta velocidade]
@@ -21,18 +22,20 @@ def velocidade(velo):
         velo {[int]} -- [deve estar entre 0 e 100]
     '''
     #Configuring don’t show warnings
-    gpio.setwarnings(False)
+    pass
 
-    #Configuring GPIO
-    gpio.setmode(gpio.BOARD)
-    gpio.setup(32,gpio.OUT)
+    # gpio.setwarnings(False)
+    # #Configuring GPIO
+    # gpio.setmode(gpio.BOARD)
+    # gpio.setup(32, gpio.OUT)
 
-    #Configura saída PWM no pino 32 e frequênci de 100Hz - AJUSTAR A FREQUENCIA
-    rotacao = gpio.PWM(32,100)
-    #rotacao.start(0) #Não inicia a rotação com 0, mas com o valor "velo"
+    # #Configura saída PWM no pino 32 e frequênci de 100Hz - AJUSTAR A FREQUENCIA
+    # rotacao = gpio.PWM(32, 100)
+    # #rotacao.start(0) #Não inicia a rotação com 0, mas com o valor "velo"
 
-    #copia a velocidade para a porta
-    rotacao.start(velo)
+    # #copia a velocidade para a porta
+    # rotacao.start(velo)
+    # while True: time.sleep(10)
 
 if __name__ == '__main__':
     '''
