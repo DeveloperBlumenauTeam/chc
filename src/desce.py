@@ -35,5 +35,5 @@ if __name__ == '__main__':
     if (gpio.input(26)==0):
         #caso tenha acionado o Fim de Curso imprime FC
         print("FC")
-    else():
+    else:
         print("NFC")
