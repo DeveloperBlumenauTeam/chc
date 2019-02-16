@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 Created on 20190209
-Update on 20190209
+Update on 20190213
 @author: Marco Aurelio
 '''
 
@@ -15,15 +15,17 @@ import time
 
 if __name__ == '__main__':
 
+    #desativa os alarmes
+    gpio.setwarnings(False)
     #configurando como BOARD, indentificação física dos pinos
     gpio.setmode(gpio.BOARD)
-    #pino 20 configurado como saída
-    gpio.setup(20, gpio.OUT)
+    #pino 38 configurado como saída
+    gpio.setup(38, gpio.OUT)
     #ativa o rele SOBE
-    gpio.outpot(20, gpio.HIGH)
+    gpio.output(38, gpio.HIGH)
     #agurada 0,5 segundos - deve ser ajustado
-    time.sleep(0,5)
+    time.sleep(0.5)
     #desativa o rele SOBE
-    gpio.output(20, gpio.LOW)
+    gpio.output(38, gpio.LOW)
     #desfaz os ajustes do GPIO - não sei porque
     gpio.cleanup()

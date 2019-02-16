@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 Created on 20190209
-Update on 20190209
+Update on 20190213
 @author: Marco Aurelio
 '''
 
@@ -19,12 +19,12 @@ if __name__ == '__main__':
     gpio.setwarnings(False)
     #configura como BOARD, identificação física dos pinos
     gpio.setmode(gpio.BOARD)
-    #pino 12 configurado como saída para a lâmpada
-    lamp = gpio.input(12)
+    #pino 40 configurado como saída para a lâmpada
+    lamp = gpio.input(40)
     if lamp:
         #se lamp = 1 desliga
-        gpio.output(12, gpio.LOW)
+        gpio.output(40, gpio.LOW)
     else:
         #se lamp = 0 liga
-        gpio.output(12, gpio.HIGH)
+        gpio.output(40, gpio.HIGH)
     
