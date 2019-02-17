@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 Created on 20190209
-Update on 20190213
+Update on 20190217
 @author: Marco Aurelio
 '''
 
@@ -30,10 +30,10 @@ if __name__ == '__main__':
     #desativa o rele DESCE
     gpio.output(36, gpio.LOW)
     #desfaz os ajustes do GPIO - não sei porque
-    gpio.cleanup()
+    #gpio.cleanup()
     #testa se o fim de curso foi acionado
-    if (gpio.input(26)==0):
+    if gpio.input(26):
         #caso tenha acionado o Fim de Curso imprime FC
-        print("FC")
-    else:
         print("NFC")
+    else:
+        print("FC")
