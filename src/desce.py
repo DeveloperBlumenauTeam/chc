@@ -32,8 +32,7 @@ if __name__ == '__main__':
     #desfaz os ajustes do GPIO - não sei porque
     #gpio.cleanup()
     #testa se o fim de curso foi acionado
-    if gpio.input(26):
-        #caso tenha acionado o Fim de Curso imprime FC
-        print("NFC")
-    else:
-        print("FC")
+    val = gpio.input(26)
+    print(val)
+    # 0 - fim de curso acionado
+    # 1 - fim de curso "Não" acionado

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 Created on 20190209
-Update on 20190213
+Update on 20190217
 @author: Marco Aurelio
 '''
 
@@ -21,8 +21,8 @@ if __name__ == '__main__':
     gpio.setmode(gpio.BOARD)
     #pino 38 configurado como saída
     gpio.setup(38, gpio.OUT)
-    #pino 28 configurado com entrada - Fim de Curso Sobe
-    gpio.setup(28, gpio.IN)
+    #pino 24 configurado com entrada - Fim de Curso Sobe
+    gpio.setup(24, gpio.IN)
     #ativa o rele SOBE
     gpio.output(38, gpio.HIGH)
     #agurada 0,5 segundos - deve ser ajustado
@@ -30,10 +30,9 @@ if __name__ == '__main__':
     #desativa o rele SOBE
     gpio.output(38, gpio.LOW)
     #desfaz os ajustes do GPIO - não sei porque
-    gpio.cleanup()
+    #gpio.cleanup()
     #testa se o fim de curso foi acionado
-    if (gpio.input(28)==0):
-        #caso tenha acionado o Fim de Curso imprime FC
-        print("FC")
-    else:
-        print("NFC")
+    val = gpio.input(24)
+    print(val)
+    # 0 - fim de curso acionado
+    # 1 - fim de curso "Não" acionado
